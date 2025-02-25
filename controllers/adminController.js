@@ -62,7 +62,8 @@
 // };
 
 const User = require("../models/User");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // Render Admin Dashboard with Players & Coaches
 exports.getDashboard = async (req, res) => {

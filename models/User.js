@@ -38,7 +38,8 @@
 // module.exports = mongoose.model("User", UserSchema);
 
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const UserSchema = new mongoose.Schema({
   name: String,

@@ -122,6 +122,7 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 const User = require("./models/User");
 const LocalStrategy = require("passport-local").Strategy; // Import the local strategy
+const bcrypt = require("bcryptjs");
 
 // Import route files
 const authRoutes = require("./routes/authRoutes");
