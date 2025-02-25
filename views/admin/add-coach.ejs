@@ -1,0 +1,71 @@
+<%- include('../layouts/header') %>
+
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">Add New Coach</h2>
+
+  <!-- Centered Card -->
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <form action="/admin/add-coach" method="POST">
+            <!-- Name Field -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                required
+              />
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+
+            <!-- Password Field -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                required
+              />
+            </div>
+
+            <!-- Specialty Field -->
+            <div class="mb-3">
+              <label for="specialty" class="form-label">Specialty:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="specialty"
+                name="specialty"
+                required
+              />
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">
+              Add Coach
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../layouts/footer') %>

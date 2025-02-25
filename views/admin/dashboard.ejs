@@ -1,0 +1,95 @@
+<%- include('../layouts/header') %>
+
+<div class="container mt-4">
+  <h2 class="mb-4">Admin Dashboard</h2>
+  <p>Welcome, <%= user.name %>!</p>
+
+  <!-- Players Section -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Players</h3>
+    <a href="/admin/add-player" class="btn btn-success">Add A New Player</a>
+  </div>
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+          <tr>
+            <th>Name</th>
+            <th>Membership</th>
+            <th>Status</th>
+            <th>Coach Name</th>
+            <th>Actions</th>
+            <th>Membership Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% players.forEach(player => { %>
+          <tr class="table-light">
+            <td><%= player.name %></td>
+            <td><%= player.membershipCategory %></td>
+            <td><%= player.membershipStatus %></td>
+            <td>Coach</td>
+            <td>
+              <a href="#" class="btn btn-info btn-sm">Assign/Reassign</a>
+            </td>
+            <td>
+              <a
+                href="/admin/cancel-membership/<%= player._id %>"
+                class="btn btn-danger btn-sm"
+                >Cancel</a
+              >
+              <a href="#" class="btn btn-success btn-sm">Renew</a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Coaches Section -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Coaches</h3>
+    <a href="/admin/add-coach" class="btn btn-primary">Add New Coach</a>
+  </div>
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="table-info">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Specialty</th>
+            <th>Address</th>
+            <th>Mobile</th>
+            <th>Players</th>
+            <th>Team</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% coaches.forEach(coach => { %>
+          <tr class="table-light">
+            <td><%= coach.name %></td>
+            <td><%= coach.email %></td>
+            <td><%= coach.specialty %></td>
+            <td>
+              <a href="#" class="btn btn-primary btn-sm">Address</a>
+            </td>
+            <td>
+              <a href="#" class="btn btn-primary btn-sm">0966658181</a>
+            </td>
+            <td>
+              <a href="#" class="btn btn-success btn-sm">Active</a>
+            </td>
+            <td>
+              <a href="#" class="btn btn-secondary btn-sm">View</a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%- include('../layouts/footer') %>

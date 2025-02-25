@@ -1,0 +1,13 @@
+<%- include('../layouts/header') %>
+
+<h2>Player Dashboard</h2>
+<p>Welcome, <%= user.name %>!</p>
+<p>Membership Status: <%= user.membershipStatus %></p>
+
+<% if (user.membershipStatus === "active") { %>
+<form action="/player/clock-in" method="POST">
+  <button type="submit">Clock In</button>
+</form>
+<% } else { %>
+<p style="color: red">Your membership has expired. Please renew.</p>
+<% } %> <%- include('../layouts/footer') %>
