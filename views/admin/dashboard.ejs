@@ -28,7 +28,8 @@
             <td><%= player.name %></td>
             <td><%= player.membershipCategory %></td>
             <td><%= player.membershipStatus %></td>
-            <td>Coach</td>
+            <td><%= player.coachName ? player.coachName : 'Unassigned' %></td>
+            <!-- Fixed Coach Name -->
             <td>
               <a href="#" class="btn btn-info btn-sm">Assign/Reassign</a>
             </td>
@@ -39,6 +40,7 @@
                 >Cancel</a
               >
               <a href="#" class="btn btn-success btn-sm">Renew</a>
+              <a href="#" class="btn btn-warning btn-sm">Edit</a>
             </td>
           </tr>
           <% }) %>
@@ -64,6 +66,7 @@
             <th>Mobile</th>
             <th>Players</th>
             <th>Team</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -72,17 +75,23 @@
             <td><%= coach.name %></td>
             <td><%= coach.email %></td>
             <td><%= coach.specialty %></td>
+            <td><a href="#" class="btn btn-primary btn-sm">Address</a></td>
+            <td><a href="#" class="btn btn-primary btn-sm">0966658181</a></td>
+            <!-- Replace with actual mobile data -->
+            <td><a href="#" class="btn btn-success btn-sm">Active</a></td>
+            <!-- Replace with actual data -->
+            <td><a href="#" class="btn btn-secondary btn-sm">View</a></td>
             <td>
-              <a href="#" class="btn btn-primary btn-sm">Address</a>
-            </td>
-            <td>
-              <a href="#" class="btn btn-primary btn-sm">0966658181</a>
-            </td>
-            <td>
-              <a href="#" class="btn btn-success btn-sm">Active</a>
-            </td>
-            <td>
-              <a href="#" class="btn btn-secondary btn-sm">View</a>
+              <a
+                href="/admin/edit-coach/<%= coach._id %>"
+                class="btn btn-warning btn-sm"
+                >Edit</a
+              >
+              <a
+                href="/admin/delete-coach/<%= coach._id %>"
+                class="btn btn-danger btn-sm"
+                >Remove</a
+              >
             </td>
           </tr>
           <% }) %>
